@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Currently a cybersecurity analyst, but previously I was a curious, 16 year old reverse engineer.
 
-### More Information
+### Certificates/training
 
-A place to include any other types of information that you'd like to include about yourself.
+CompTIA Security+, Cisco CCNA R&S, and a graduate of Security Onion Advanced course
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
