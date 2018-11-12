@@ -8,5 +8,5 @@ Currently a cybersecurity analyst, but previously I was a curious, 16 year old r
 
 ### Certificates/training
 
-CompTIA Security+, Cisco CCNA R&S, and a graduate of Security Onion Advanced course
+CompTIA CASP+, Cisco CCNA R&S, and a graduate of Security Onion Advanced course
 
