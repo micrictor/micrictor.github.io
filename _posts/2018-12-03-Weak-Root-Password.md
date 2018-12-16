@@ -49,7 +49,8 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 1331274       0x14504A        xz compressed data
 1416462       0x159D0E        xz compressed data
 1499950       0x16E32E        xz compressed data
-....```
+....
+```
 
 Looks like there's one sqaushfs filesystem, we'll go ahead and look at the shadow file stored in it.
 
@@ -65,10 +66,13 @@ man:*:17751:0:99999:7:::
 lp:*:17751:0:99999:7:::
 mail:*:17751:0:99999:7:::
 news:*:17751:0:99999:7:::
-student@attackdefense:~$```
+student@attackdefense:~$
+```
 
 Now that we have the root password hash, we need to crack it. I don't know, offhand, what type of hash "$6$" is, so I went to [hashcat's example hashes list](https://hashcat.net/wiki/doku.php?id=example_hashes), which states that our hash is a SHA512crypt hash, which is mode 1800 on hashcat. After putting the hash inside hashes.txt, I ran hashcat on our hash using the supplied passwordlist. In about 1.5 minutes, we cracked the hash.
 
-```$6$d6oAYJZc$BVECjh88noC0ZRIxNiuNL2LDXBnMzMQS.AzbpTd3vkFC3yQS8ytad7oifCjt4M2RSA3DMhxpg8xTOpawPtCCF/:q1w2e3r4```
+```
+$6$d6oAYJZc$BVECjh88noC0ZRIxNiuNL2LDXBnMzMQS.AzbpTd3vkFC3yQS8ytad7oifCjt4M2RSA3DMhxpg8xTOpawPtCCF/:q1w2e3r4
+```
 
 
