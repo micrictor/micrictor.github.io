@@ -125,13 +125,14 @@ Since we helped her, Minty offers the following advice:
 Why does this exploit work? The underlying PowerShell script likely looked something like this:
 ```
 $host = Read-Host -Prompt 'Enter the address of server'
-ping.exe $host
+ping.exe "$host"
 ```
-Because the input is completely trusted, when we add _"; newcmd"_ to the end of the input, we are telling the PowerShell engine to run _ping.exe_, then, with the ";" character, to also execute _newcmd_.
+Because the input is blindly ran, when we add _"; newcmd"_ to the end of the input, we are telling the PowerShell engine to run _ping.exe_, then, with the ";" character, to also execute _newcmd_.
 
-A more secure script should escape the user input, as so:
+A more secure script should sanitize the user input, as so:
 ```
 $host = Read-Host -Prompt 'Enter the address of server'
+$host = $host -replace "[`'`"`;`&`|]", ''
 ping.exe "$host"
 ```
 
