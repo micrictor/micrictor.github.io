@@ -714,7 +714,7 @@ Krampus, who some might recognize as Santa's evil counterpart, is our applicant 
 
 Having helped the elves identify the organization seems to have brought Hans' plot to a screeching halt.
 
-CSV injection is a powerful and common vulnerability. As we saw, it can be used to directly exfiltrate data from a spreadsheet, or execute arbitrary commands. To mitigate it, as with most injection vulnerabilities, requires input sanitation. There are four key characters, +,-,+,@, that, when seen, should be prefixed with one single quote ('), as doing so prevents Excel and other spreadsheet software from interpreting that cell as a formula. Additionally, registry keys should be modified in accordance with [Microsoft Security Advisory 4053440](https://docs.microsoft.com/en-us/security-updates/securityadvisories/2017/4053440) to prevent auto-execution of Dynamic Data Exchange links. The final piece of the puzzle is, as always, user education, as, with the previous two controls in place, the user should, at the very least, be prompted to confirm that they would like to execute the DDE object. A properly educated user will know that such requests are not normal for Microsoft Office documents, decline the prompt, and at the very least delete the offending document from their computer.
+CSV injection is a powerful and common vulnerability. As we saw, it can be used to directly exfiltrate data from a spreadsheet, or execute arbitrary commands. To mitigate it, as with most injection vulnerabilities, requires input sanitation. There are four key characters, +,-,=,@, that, when seen, should be prefixed with one single quote ('), as doing so prevents Excel and other spreadsheet software from interpreting that cell as a formula. Additionally, registry keys should be modified in accordance with [Microsoft Security Advisory 4053440](https://docs.microsoft.com/en-us/security-updates/securityadvisories/2017/4053440) to prevent auto-execution of Dynamic Data Exchange links. The final piece of the puzzle is, as always, user education, as, with the previous two controls in place, the user should, at the very least, be prompted to confirm that they would like to execute the DDE object. A properly educated user will know that such requests are not normal for Microsoft Office documents, decline the prompt, and at the very least delete the offending document from their computer.
 
 [Link to Relevant Kringlecon Talk](http://www.youtube.com/watch?v=Z3qpcKVv2Bg)
 
@@ -751,7 +751,7 @@ $(function () {
 ...
 ```
 
-Well, that comment would seem to indicate that there is some serverside validation going on. If possible, I'd like to see the serverside code. Given that all of the other javascript files were hosted at _/pub/js/<file>_, I browsed [to that](https://packalyzer.kringlecastle.com/pub/app.js), successfully getting the server-side code. I've gone ahead and extracted the juicy bits below:
+Well, that comment would seem to indicate that there is some serverside validation going on. If possible, I'd like to see the serverside code. Given that all of the other javascript files were hosted at _/pub/js/(filename)_, I browsed [to that](https://packalyzer.kringlecastle.com/pub/app.js), successfully getting the server-side code. I've gone ahead and extracted the juicy bits below:
 ```
 const dev_mode = true;
 const key_log_path = ( !dev_mode || __dirname + process.env.DEV + process.env.SSLKEYLOGFILE )
