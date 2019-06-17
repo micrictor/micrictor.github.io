@@ -288,9 +288,3 @@ footer {
 @import "svg-icons";
 
 @import "{{ site.theme }}";
-
-body {
-	background-color: #dcdcdc;
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
-}
