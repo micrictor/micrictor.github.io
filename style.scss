@@ -273,9 +273,9 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #ccc;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  background-color: #dcdcdc;
 }
 
 footer {
@@ -289,3 +289,8 @@ footer {
 
 @import "{{ site.theme }}";
 
+body {
+	background-color: #dcdcdc;
+  font: 18px/1.4 $helvetica;
+  color: $darkGray;
+}
