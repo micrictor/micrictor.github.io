@@ -290,7 +290,18 @@ footer {
 @import "{{ site.theme }}";
 
 body {
-	background-color: #dcdcdc;
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
+	background-color: #dfdfdf;
+  padding: 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #666;
+}
+
+a {
+  color: #bb3;
+}
+
+.masthead {
+  border-bottom: 3px solid #bbb;
 }
