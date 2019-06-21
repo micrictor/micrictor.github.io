@@ -284,17 +284,23 @@ footer {
 }
 
 body {
-	background-color: #dfdfdf;
+  background-color: #ededed;
+  color: #666;
   padding: 0 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #666;
+  color: #333;
 }
 
 a {
-  color: #bb3;
+  color: #d9b42c;
 }
+
+a:hover, a:active {
+  color: #dcb830;
+}
+
 
 .masthead {
   border-bottom: 3px solid #bbb;
@@ -305,20 +311,3 @@ a {
 @import "svg-icons";
 
 @import "{{ site.theme }}";
-
-body {
-	background-color: #dfdfdf;
-  padding: 0 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #666;
-}
-
-a {
-  color: #bb3;
-}
-
-.masthead {
-  border-bottom: 3px solid #bbb;
-}
