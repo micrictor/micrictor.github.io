@@ -311,3 +311,27 @@ a:hover, a:active {
 @import "svg-icons";
 
 @import "{{ site.theme }}";
+
+
+body {
+  background-color: #ededed;
+  color: #666;
+  padding: 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+a {
+  color: #d9b42c;
+}
+
+a:hover, a:active {
+  color: #dcb830;
+}
+
+
+.masthead {
+  border-bottom: 3px solid #bbb;
+}
