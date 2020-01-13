@@ -78,9 +78,7 @@ Thanks to Bushy, we know that, at some point, we'll be hunting for artifacts of 
 
 Since we have a shell, I thought I'd poke around a bit. Using [find](http://man7.org/linux/man-pages/man1/find.1.html), I searched for any files with modification dates more recent than dpkg.log. Since the shell is in a docker container, this will return every file created or modified during the container build process. 
 
-HH19-EdEnum-1
-
-![HH19-EdEnum-1]({{ site.baseurl }}/images/HH19-EdEnum-1.png)
+![HH19-EdEnum-1]({{ site.baseurl }}/images/HH19-EdEnum-1.PNG)
 
 
 _/usr/local/bin/successfulescape_ seems interesting. Maybe we will be able to learn something about how the container interacts with the Holiday Hack scoring system. Using [grep](http://man7.org/linux/man-pages/man1/grep.1.html) to get the ASCII strings in the executable yielded the following interesting strings:
@@ -113,18 +111,18 @@ It looks like this program was written in python then compiled using something l
 
 SugarPlum Mary seems to be having some issues with using the _ls_ command to view the contents of her directory. Due to the heavy hinting, it seems likely that she's fallen prey to a [path interception](https://attack.mitre.org/techniques/T1034/) attack. The following confirms this, then runs the legitimate _ls_ by specifying the full path.
 
-![Linux Path]({{ site.baseurl }}/images/HH19-PATH.png)
+![Linux Path]({{ site.baseurl }}/images/HH19-PATH.PNG)
 
 In this listing, we can also see two hidden easter eggs.
 
 .elfscream.txt
 
-![ElfScream]({{ site.baseurl }}/images/HH19-ElfScream.png)
+![ElfScream]({{ site.baseurl }}/images/HH19-ElfScream.PNG)
 
 
 rejected-elfu-logos.txt
 
-![ElfU-Logos]({{ site.baseurl }}/images/HH19-ElfU-Logos.png)
+![ElfU-Logos]({{ site.baseurl }}/images/HH19-ElfU-Logos.PNG)
 
 
 For assistance with listing files, SugarPlum tells us this:
