@@ -8,6 +8,8 @@ tags: [ctf, sans]
 
 Happy holidays everyone! Today's post is my write-up for this year's Holiday Hack. From what I can glean from the tweets of the CounterHack crew, this years challenge includes a variety of topics, from DFIR to machine learning. As always, it's sure to be exciting!
 
+UPDATE: I'm honored to be have been noted as a [super honorable mention!](https://holidayhackchallenge.com/2019/winners_answers.html) Thanks to the CounterHack crew for another year of fun challenges.
+
 
 ## Table of Contents
 [Cranberry Pi Challenges](#cranberry-pi-challenges)
