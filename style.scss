@@ -324,7 +324,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #d9b42c;
+  color: #d3b238;
 }
 
 a:hover, a:active {
@@ -334,4 +334,9 @@ a:hover, a:active {
 
 .masthead {
   border-bottom: 3px solid #bbb;
+}
+
+.code {
+  background-color: darkgray;
+  color: #666;
 }
