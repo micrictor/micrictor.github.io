@@ -6,8 +6,8 @@ categories: [ml, spl, zeek, nsm, network, security]
 tags: [zeek,nsm,security,tls]
 ---
 
-Inspired by an email from a former instructor, I created a [Zeek](https://zeek.org/) package, [spl-spt](https://github.com/micrictor/spl-spt), with the goal of providing new data that can be used to identify malicious TLS sessions. In this post, I will be discussing what the new data is, why I chose the data features I did, visualizing the data, and building a classification model using the data. 
- 
+Inspired by an email from a former instructor, I created a [Zeek](https://zeek.org/) package, [spl-spt](https://github.com/micrictor/spl-spt), with the goal of providing new data that can be used to identify malicious TLS sessions. In this post, I will be discussing what the new data is, why I chose the data features I did, visualizing the data, and building a classification model using the data.
+
 
 ## Preface
 
