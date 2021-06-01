@@ -2,6 +2,16 @@
 layout: default
 ---
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXS476NJ28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DXS476NJ28');
+</script>
 <article class="post">
   <h1>{{ page.title }}</h1>
 
@@ -12,6 +22,4 @@ layout: default
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
-
-  {% include disqus.html %}
 </article>
