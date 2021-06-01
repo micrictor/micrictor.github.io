@@ -2,6 +2,16 @@
 layout: default
 ---
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXS476NJ28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DXS476NJ28');
+</script>
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
@@ -9,7 +19,7 @@ layout: default
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <div class="entry">
-        {{ post.excerpt }}
+        {{ post.excerpt | truncate: 250 }}
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
