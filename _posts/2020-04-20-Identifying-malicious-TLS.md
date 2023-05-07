@@ -4,13 +4,14 @@ title: Identifying malicious TLS sessions
 description: Logging and using TLS metadata to detect bad
 categories: [ml, spl, zeek, nsm, network, security]
 tags: [zeek,nsm,security,tls]
+excerpt_separator: <!--end_excerpt-->
 ---
 
 Inspired by an email from a former instructor, I created a [Zeek](https://zeek.org/) package, [spl-spt](https://github.com/micrictor/spl-spt), with the goal of providing new data that can be used to identify malicious TLS sessions. In this post, I will be discussing what the new data is, why I chose the data features I did, visualizing the data, and building a classification model using the data.
 
 Enjoy the read!
 
-
+<!--end_excerpt-->
 ## Preface
 The prevalence of data-in-transit encryption, most commonly done with Transport Layer Security (TLS) or Secure Sockets Layer (SSL), has severely limited the ability of monitoring tools to identify malicious network traffic. When used, TLS encrypts everything but the initial negotiation. Before TLS 1.3, this included the server's certificate, and optionally the Server Name Identifier (SNI), which could be used to identify the server being accessed by the client. Also included was information about what extentions and encryption algorithms the client and server supported, used by [ja3](https://github.com/salesforce/ja3) to generate a fingerprint of each side. TLS 1.3, however, includes the ability to send data before the handshake process when the client and server have previously communicated via [HTTP Early Data](https://tools.ietf.org/id/draft-thomson-http-replay-01.html#rfc.section.5), also known as [0-Round Trip Time (0-RTT)](https://blog.cloudflare.com/introducing-0-rtt/), which I suspect will see use as a method of avoiding network analysis.
 
