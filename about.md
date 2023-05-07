@@ -4,9 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Currently a cybersecurity analyst, but previously I was a curious, 16 year old reverse engineer.
+I make tools for defenders and offensive security teams, and help win capture-the-flag competitions.
 
-### Certificates/training
-
-CompTIA CASP+, Cisco CCNA R&S, and a graduate of Security Onion Advanced course
-
+Security engineer at "big tech", Cyber Warfare Operator for the United States Marine Corps.
