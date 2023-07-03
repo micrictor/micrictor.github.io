@@ -62,7 +62,7 @@ Minty Candycane seems to have forgotten her coworker's, last name "Chan", first 
 
 When we open our shell, we are given the option to start the onboarding process, verify the system, or quit the application. Since Minty thought it was important to tell us about the onboarding system, that seems like a good place to start.
 
-After spending 30 minutes unsucessfully trying to inject into the onboarding option, I finally decided I would take a look at option two, system verification. Running it gave me the following:
+After spending 30 minutes unsuccessfully trying to inject into the onboarding option, I finally decided I would take a look at option two, system verification. Running it gave me the following:
 
 ```
 Validating data store for employee onboard information.

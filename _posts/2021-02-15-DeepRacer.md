@@ -40,7 +40,7 @@ def reward_function(params):
     return float(reward)
 ```
 
-I also turn the "Stop time", the maximum time training will occur, down to 15 minutes. I'll be suprised if it takes this long, but I'm trying to get the most out of the [ten hours of training in the free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23trial&awsm.page-all-free-tier=1&awsf.Free%20Tier%20Categories=categories%23ai-ml&all-free-tier.q=deepracer&all-free-tier.q_operator=AND).
+I also turn the "Stop time", the maximum time training will occur, down to 15 minutes. I'll be surprised if it takes this long, but I'm trying to get the most out of the [ten hours of training in the free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23trial&awsm.page-all-free-tier=1&awsf.Free%20Tier%20Categories=categories%23ai-ml&all-free-tier.q=deepracer&all-free-tier.q_operator=AND).
 
 
 ### Results
