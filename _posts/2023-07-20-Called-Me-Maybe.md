@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Called Me Maybe - EDR Evasion
-published: false
 ---
 
 Endpoint Detection and Response (EDR) solutions have started to collect and analyze
@@ -56,33 +55,59 @@ can help classify running software as malicious.
 
 ## Seeing What EDR Sees
 
-1. ETW - Sealight and PPLRunner 
-2. Sysmon event ID 10 (CreateRemoteThread)
-3. API Hooking
-4. Manually (debugger + stack frame analysis)
+To avoid detection, it would be massively helpful to be able to view the same
+data available to EDRs. Two main methods are likely used to get this data:
+*   Subscribing to the Event Tracing for Windows (ETW) Threat Intelligence (TI)
+    provider.
+*   Hooking the API methods, in either user or kernel space
 
+SysMon also provides CreateRemoteThread call stacks for analysis, and, because
+I didn't need to be able to do this at scale, I was able to manually validate
+call stacks in my debugger. 
 
 ## Using Callbacks to Fake Call Stacks
 
-* Some Win32 APIs have callback functions
-* Some are more direct (InvokeOnceExecuteOnce, ThreadpoolWork), while others are less direct (FlsAlloc deallocation callbacks)
-* We can use them to call target APIs without including our
-own memory in the call stack.
+The Windows API includes a large number of functions that are designed to work
+asynchronously, but are called synchronously. To do so, they expect the caller
+to provide a callback function as a parameter. If we want to make it look like
+a target API call originated from a trusted memory region - say, a procedure in
+ntdll.dll - this is great news.
 
-[The full source code for both the control and "main" executables are available on GitHub](https://github.com/micrictor/windows-api-proxy/tree/hexacon)
+By having our "callback" function manually set up parameters, according to the
+x64 calling convention, then jump to the target API, we can call any target API
+we want. The one caveat to this is that a callback function cannot call a
+target API with more arguments than itself.
 
-### MSVC vs GCC
-* MSVC doesn't support inline ASM for x64
-* We could just link in a masm/nasm object, but that's not as fun
-* Inline assembly to set up the registers/stack with the required number of arguments.
+As a quick note, you may notice that I used GCC for everything instead of MSVC.
+Well, it turns out the MSVC doesn't support inline 64-bit assembly. I could
+have just written and assembled the hand-written stuff in a separate object,
+then link it into the final program, but that didn't sound as fun.
 
-### Experiment results
+The "magic" that sets up the parameters and jumps to the target API can be
+found [here](https://github.com/micrictor/windows-api-proxy/blob/hexacon/thunk.h).
 
-* Both systems use dynamic procedure lookup with XOR-encrypted module and procedure names to avoid basic static analysis.
-* `Control` directly calls VirtalAlloc, VirtualProtect, then directly executes the shellcode
-* `Main` uses ThreadpoolWork to indirectly do the same.
+### Experiment
 
-Significant differences in VirusTotal results - and Defender purges `control.exe` from my workstation, but not `main.exe`.
+To prove the merit of the callback technique to avoid detection, I created a
+control executable and a main executable, which load and invoke the same
+payload, spawning `calc.exe`. The only difference between them is that the
+main executable makes the VirtualAlloc and VirtualProtect calls using callback
+redirection.
+
+To prevent antivirus solutions from doing static detections, both samples use
+the same an XOR OTP key to encrypt function names and module names. Those names
+are then used to dynamically resolve symbol names using `GetProcAddress`.
+
+[The control, without callback redirection,](https://www.virustotal.com/gui/file/99bcdbde638353fa59f2ce91c0ff7c27f7c2d5cbaf3f2cb720920f436316b8f4?nocache=1)
+had 17/71 detections when initially uploaded. It has increased to 45/71 at time
+of publishing. Windows Defender also detects this and keeps deleting it from my
+hard drive.
+
+[The main, with callback redirection,](https://www.virustotal.com/gui/file/f2f44f72fd1f12bf184327e1a9a79e65eb8b100146ccbe73749f41a41084fbd2?nocache=1)
+had 5/71 detections when initially uploaded, and only 6/71 at time of
+publishing.
+
+[The full source code for both the control and "main" executables are available on GitHub](https://github.com/micrictor/windows-api-proxy/tree/hexacon).
 
 ## Detection
 
