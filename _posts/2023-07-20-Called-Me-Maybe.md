@@ -13,9 +13,6 @@ but they had a bunch of extremely talented people apply to talk and I didn't
 make the final cut. If you're looking for a conference with a focus on offensive
 security, conveniently co-scheduled with the Rugby World Cup, you should go!
 
-https://docs.google.com/presentation/d/1JLPq_Ypkp0auTwpflXJ_qT3U7CKXQNQ_oT8Q53hgNiE/edit?pli=1&resourcekey=0-oB20j8fvPa8VZpfkW0Geqg#slide=id.g21ee16f8bbc_0_1 
-
-
 ## Contents
 
 1. [EDR Call Stack Analysis](#edr-call-stack-analysis)
