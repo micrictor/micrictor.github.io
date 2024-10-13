@@ -13,7 +13,9 @@ my research. If you prefer, [the full video is available on the DEF CON media se
 The one thing that's included in this post that I wasn't able to include in the presentation is
 [the spoofing vulnerability, CVE-2024-43571](#spoofing)
 
-![Presentation Video](https://media.defcon.org/DEF%20CON%2032/DEF%20CON%2032%20video%20and%20slides/DEF%20CON%2032%20-%20Sudos%20and%20Sudon%E2%80%99ts%20-%20Peering%20inside%20Sudo%20for%20Windows%20-%20Michael%20Torres.mp4)
+<video style="display:block; width:100%; height:auto;" autoplay controls>
+    <source src="https://media.defcon.org/DEF%20CON%2032/DEF%20CON%2032%20video%20and%20slides/DEF%20CON%2032%20-%20Sudos%20and%20Sudon%E2%80%99ts%20-%20Peering%20inside%20Sudo%20for%20Windows%20-%20Michael%20Torres.mp4" type="video/mp4" />
+</video>
 
 ## Contents
 1.  [Overview](#overview)
