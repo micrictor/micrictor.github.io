@@ -13,14 +13,6 @@ my research. If you prefer, [the full video is available on the DEF CON media se
 The one thing that's included in this post that I wasn't able to include in the presentation is
 [the spoofing vulnerability, CVE-2024-43571](#spoofing)
 
-<iframe
-    width="100%"
-    height="auto"
-    frameborder="0"
-    allowfullscreen
-    src="https://media.defcon.org/DEF%20CON%2032/DEF%20CON%2032%20video%20and%20slides/DEF%20CON%2032%20-%20Sudos%20and%20Sudon%E2%80%99ts%20-%20Peering%20inside%20Sudo%20for%20Windows%20-%20Michael%20Torres.mp4">
-</iframe>
-
 ## Contents
 1.  [Overview](#overview)
 2.  [Memory Safety](#memory-safety)
