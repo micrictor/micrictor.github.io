@@ -54,12 +54,15 @@ we can get a pretty good idea of how it all works. At a high level:
 Microsoft made the choice to write Sudo primarily in Rust, as can be seen
 [in the project's GitHub repository.](https://github.com/microsoft/sudo/tree/main)
 Rust, being a memory safe language, is usually assumed to ensure that the programs written using
-it are memory. The reality is that most Rust code includes at least some `unsafe` code, which
+it are memory safe. The reality is that most Rust code includes at least some `unsafe` code, which
 makes memory safety issues still very much possible.
 
 During dynamic analysis, I discovered a memory safety issue that I don't think has any
 security impact, but is interesting nonetheless. More specifically, a buffer overread can be
-observed in an attempt to read a file after resolving the path to the user-specified executable.
+observed in an attempt to read the supplied executable to run in order to check what "type"
+of binary it is. Supplying a binary name with a an absolute path results in a call to
+`CreateFile` via `GetBinaryType` that attempts to open a file name that includes garbage data
+from the heap.
 
 The root cause of the issue appears to be that the programmer assumed that coercing a Rust `str`
 into a `*const u8` would result in a null-terminated representation of the Rust `str`. In reality,
