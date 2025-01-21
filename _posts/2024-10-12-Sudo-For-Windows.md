@@ -13,6 +13,8 @@ my research. If you prefer, [the full video is available on the DEF CON media se
 The one thing that's included in this post that I wasn't able to include in the presentation is
 [the spoofing vulnerability, CVE-2024-43571](#spoofing)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-iNezAL_EF0?si=2WPnb5Fs_UD4Dofh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Contents
 1.  [Overview](#overview)
 2.  [Memory Safety](#memory-safety)
