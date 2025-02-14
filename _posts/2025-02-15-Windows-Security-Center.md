@@ -13,7 +13,15 @@ noticeable degradation in a couple user-facing security features, including
 status reporting of antimalware and firewall products and the ability to start
 an on-demand scan.
 
-## Overview
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Vulnerability Details](#vulnerability-details)
+3. [Exploitation](#exploitation)
+4. [Mitigation and Protection](#mitigation-and-protection)
+5. [Conclusion](#conclusion)
+
+# Overview
 
 While poking around at on-by-default ALPC services in Microsoft Windows 11, I
 noticed that the Windows Security Center service (WSCSVC) is vulnerable to a
@@ -23,10 +31,12 @@ registration of new security products. It is this event handling system that
 ends up permitting unprivileged users to exhaust the memory of the service, and
 therefore the system, resulting in a denial of service condition.
 
-The service is implemented as a
-svchost.exe service that runs as SYSTEM in a Protected Process Light (PPL).
+The WSCSVC service is implemented by svchost.exe, and runs as the Local Service
+account. It is an Anti-Malware Protected Process Light (AMPPL), which means it runs as
+SYSTEM and is protected from tampering by any process not signed by Microsoft
+or another trusted antimalware service.
 
-## Outline
+# Outline
 
 1. Introduction
     - Brief explanation of denial of service (DoS) attacks
