@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I make tools for defenders and offensive security teams, and help win capture-the-flag competitions.
+Part-time reverse engineer, full time shenanigans.
 
 Security engineer at "big tech", Cyber Warfare Operator for the United States Marine Corps.

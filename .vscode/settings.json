@@ -3,5 +3,6 @@
         "Alloc",
         "Hexacon",
         "Sysmon"
-    ]
+    ],
+    "markdown.validate.enabled": true
 }
