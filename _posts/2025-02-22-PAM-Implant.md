@@ -76,7 +76,7 @@ those requirements are:
 
 To test these requirements before inserting the module into my own PAM stack,
 I wrote a small C program that would load the shared object, call the two
-two methods, then print a message to demonstrate that execution continued.
+methods, then print a message to demonstrate that execution continued.
 
 ```c
 #include <stdio.h>
