@@ -2,8 +2,8 @@
 layout: post
 title: "Windows Security Center (WSC) DoS"
 date: 2025-02-15
-categories: [Security, Vulnerabilities, Windows]
-tags: [DoS, Windows Security Center, Vulnerability]
+categories: [windows, vulnerabilities]
+tags: [Windows Security Center, vulnerability]
 published: true
 ---
 

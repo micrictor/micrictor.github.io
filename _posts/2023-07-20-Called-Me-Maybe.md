@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Called Me Maybe - EDR Evasion
+categories: [windows, malware]
+tags: [malware, development, windows]
 ---
 
 Endpoint Detection and Response (EDR) solutions have started to collect and analyze

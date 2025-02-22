@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sudos and Sudon'ts - Vulnerabilities in Sudo for Windows
+categories: [windows, vulnerabilities]
+tags: [windows, research, vulnerability, sudo]
 ---
 
 On 7 Februrary, 2024, Microsoft announced that a tool called "Sudo for Windows"
