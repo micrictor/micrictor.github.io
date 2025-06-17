@@ -17,7 +17,7 @@ The model can be used to relate four variables to each other:
 [`pinhole-distance`](https://github.com/micrictor/pinhole-distance) includes predefined "Packages" for three cameras I had on-hand. Using an object recognition model with the ability to output bounding boxes like YOLO, you can provide the observed width or height of an object, an estimate of what you believe the real width or height to be, and get an estimate
 of how far away the object is.
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ## How It Works
 
